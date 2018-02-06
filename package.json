@@ -21,7 +21,10 @@
       "text"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "config": "^1.29.4",
+    "great-circle": "^0.2.8"
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.9.0",
