@@ -1,0 +1,39 @@
+{
+  "name": "intercom-coding-test",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha test -- --reporter dot",
+    "posttest": "./node_modules/.bin/nyc check-coverage --lines 100 --functions 100 --branches 100  --statements 100"
+  },
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "config/**",
+      "node_modules/**",
+      "test/**",
+      "app.js",
+      "gruntfile.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0",
+    "grunt-eslint": "^20.1.0",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.4.1",
+    "proxyquire": "^1.8.0",
+    "sinon": "^4.0.1"
+  }
+}
