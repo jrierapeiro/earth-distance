@@ -1,0 +1,10 @@
+.git/
+.dockerignore
+.DS_Store
+.eslintrc
+.gitignore
+.nyc_output/*
+coverage/
+test/
+gruntfile.js
+Dockerfile
