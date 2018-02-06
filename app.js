@@ -1,16 +1,12 @@
 'use strict';
 
-const config = require('config');
-const costumerService = require('./services/customerService');
-const distanceService = require('./services/distanceService');
+const main = require('./lib/main');
 
-async function main() {
-  const customers = await costumerService.getCustomersFromFile('./data/costumers.txt');
-  const closestCustomers = distanceService.getClosestCustomers(customers, config.maxDistance);
-
+async function showClosestsCustomers() {
+  const closestCustomers = await main.getClosestCustomersFromFile('./data/customers.txt');
   closestCustomers.forEach((customer) => {
-    console.log(customer.user_id);
+    console.log(`${customer.user_id} - ${customer.name}`);
   });
 }
 
-main();
+showClosestsCustomers();

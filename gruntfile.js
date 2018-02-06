@@ -7,7 +7,7 @@ module.exports = function (grunt) {
   const lintFiles = [
     'utils/**/*.js',
     'test/**/*.js',
-    'services/**/*.js',
+    'lib/**/*.js',
     './gruntfile.js',
     './app.js'
   ];

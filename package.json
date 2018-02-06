@@ -4,17 +4,18 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha test -- --reporter dot",
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha test",
     "posttest": "./node_modules/.bin/nyc check-coverage --lines 100 --functions 100 --branches 100  --statements 100"
   },
   "nyc": {
     "all": true,
     "exclude": [
+      "coverage/**",
       "config/**",
       "node_modules/**",
       "test/**",
-      "app.js",
-      "gruntfile.js"
+      "gruntfile.js",
+      "utils/logger.js"
     ],
     "reporter": [
       "lcov",
@@ -23,10 +24,12 @@
   },
   "dependencies": {
     "config": "^1.29.4",
-    "great-circle": "^0.2.8"
+    "great-circle": "^0.2.8",
+    "line-by-line": "^0.1.6"
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
